@@ -3,6 +3,10 @@ import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
+import { enableScreens } from "react-native-screens";
+import MealsNavigator from "./navigation/MealsNavigator";
+
+enableScreens();
 
 export default function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -24,22 +28,15 @@ export default function App() {
     );
   }
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>
-        Open up App.js to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <MealsNavigator />;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    // backgroundColor: "#fff",
+    // alignItems: "center",
+    // justifyContent: "center",
   },
   title: {
     fontFamily: "open-sans-bold",
